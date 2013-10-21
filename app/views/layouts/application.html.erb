@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Twitter</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <title>Ribbit</title>
+  <link rel="stylesheet/less" href="/style.less" />
+  <script src="/less.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <header>
+    <div class ="wrapper">
+      <img src="/gfx/logo.png"/>
+      <span>Twitter Clone</span>
+    </div>
+  </header>
+<div id="content">
+  <div class="wrapper">
+    <% flash.each do |name, msg| %>
+      <% content_tag :div, msg, class: "flash #{name}" %>
+      <%end%>
 <%= yield %>
 
+</div>
+  <footer>
+    <div class="wrapper">
+      Ribbit - A Twitter Clone By Joe<img src="/gfx/logo-nettuts.png">
+    </div>
+  </footer>
 </body>
 </html>
