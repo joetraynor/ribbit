@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     else
       flash[:error] = "Wrong username or password, idiot"
       redirect_to root_url
+    end
   end
 
   def destroy
