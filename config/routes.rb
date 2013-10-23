@@ -12,7 +12,7 @@ Twitter::Application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
   get 'buddies', to: 'users#buddies', as: 'buddies'
 
-  root to: => "users#new"
+  root to: "users#new"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
