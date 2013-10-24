@@ -9,13 +9,13 @@
 <body>
   <header>
     <div class ="wrapper">
-      <img src="/gfx/logo.png"/>
+      
       <span>Twitter Clone</span>
       <%if current_user %>
-        <%= link_to "Buddies' Ribbits", buddies_path %>
+        <%= link_to "My Profile", current_user%>
+        <%= link_to "Timeline", buddies_path %>
         <%= link_to "Public Ribbits", ribbits_path%>
         <%= link_to "Public Profiles", users_path%>
-        <%= link_to "My Profile", current_user%>
         <%= link_to "Log Out", logout_path %>
       <% else %>
         <%= form_tag sessions_path do %>
@@ -36,7 +36,7 @@
 </div>
   <footer>
     <div class="wrapper">
-      Ribbit - A Twitter Clone By Joe
+      Ribbit - A Twitter Clone By <a href="http://www.twitter.com/joetrayns">@joetrayns</a>
     </div>
   </footer>
 </body>
