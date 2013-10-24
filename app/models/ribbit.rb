@@ -5,4 +5,13 @@ class Ribbit < ActiveRecord::Base
   belongs_to :user
 
   validates :content, length: { maximum: 140 }
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['content LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
 end

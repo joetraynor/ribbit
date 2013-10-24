@@ -2,7 +2,15 @@
   <%= render 'ribbits/new_form' %>
 <%end%>
 <div class="panel left">
-  <h1>Public Ribbits</h1>
+  <h1>A Line of Time</h1>
+
+  <%= form_tag ribbits_path, :method => 'get' do%>
+    <p>
+      <%= text_field_tag :search, params[:search]%>
+      <%= submit_tag "Search:", :content => 'nil'%>
+    </p>
+  <%end%>
+
   <% @ribbits.each do |ribbit| %>
     <div class = "ribbitWrapper">
       <a href="<%= user_path ribbit.user%>">

@@ -3,6 +3,7 @@ class RibbitsController < ApplicationController
   def index
     @ribbits = Ribbit.all
     @ribbit = Ribbit.new
+    @ribbits = Ribbit.search(params[:search])
   end
 
 

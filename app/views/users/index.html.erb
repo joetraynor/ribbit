@@ -4,6 +4,14 @@
 
 <div class="panel left">
   <h1>Public Profiles</h1>
+
+<%= form_tag users_path, :method => 'get' do%>
+    <p>
+      <%= text_field_tag :search, params[:search]%>
+      <%= submit_tag "Search:", :name => 'nil'%>
+    </p>
+  <%end%>
+
   <%@users.each do |user| %>
     <div class="ribbitWrapper">
       <a href="<%=user_path user%>">
