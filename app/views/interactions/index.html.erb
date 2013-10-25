@@ -2,12 +2,12 @@
   <%= render 'ribbits/new_form' %>
 <%end%>
 <div class="panel left">
-  <h1>A Line of Time</h1>
+  <h1>Interactions</h1>
 
   <%= form_tag ribbits_path, :method => 'get' do%>
     <p>
-      <%= submit_tag "Search for hashtag:", :content => 'nil'%>
       <%= text_field_tag :search, params[:search]%>
+      <%= submit_tag "Search:", :content => 'nil'%>
     </p>
   <%end%>
 
