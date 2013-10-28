@@ -1,10 +1,11 @@
 require 'digest/md5'
 
 class User < ActiveRecord::Base
-  attr_accessible :avatar_url, :bio, :email, :name, :password, :password_confirmation, :username
+  attr_accessible :avatar_url, :bio, :email, :name, :password, :password_confirmation, :username, :image
   has_secure_password
 
   has_many :ribbits
+  mount_uploader :image, ImageUploader
 
   has_many :follower_relationships, class_name: 'Relationship', foreign_key: 'followed_id'
   has_many :followed_relationships, class_name: 'Relationship', foreign_key: 'follower_id'

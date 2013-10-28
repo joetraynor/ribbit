@@ -10,6 +10,7 @@
   <div class ="ribbitWrapper">
     <img class ="avatar" src="<%= @user.avatar_url%>"/>
     <span class="name"><%= @user.name%></span> @<%=@user.username%>
+    <%= image_tag @user.image_url(:thumb).to_s %>
     <p>
       <%= @user.ribbits.length %> Ribbits
       <span class="spacing"> <%= @user.followers.length%> Followers </span>
@@ -29,7 +30,7 @@
             <%= f.hidden_field :followed_id, value: @user.id %>
             <%= f.submit "Follow"%>
         <%end%>
-      <%end%>
+      <%end%> 
     <%end%>
     </p>
   </div>
