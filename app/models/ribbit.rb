@@ -4,7 +4,7 @@ class Ribbit < ActiveRecord::Base
 
   belongs_to :user
 
-  validates :content, length: { maximum: 140 }
+  validates :content, length: { maximum: 140, minimum: 1 }
 
   def self.search(search)
     if search

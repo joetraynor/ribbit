@@ -8,7 +8,7 @@
 
   </h1>
   <div class ="ribbitWrapper">
-    <img class ="avatar" src="<%= @user.avatar_url%>"/>
+    
     <span class="name"><%= @user.name%></span> @<%=@user.username%>
     <%= image_tag @user.image_url(:thumb).to_s %>
     <p>
@@ -39,11 +39,13 @@
   <h1>Ribbits</h1>
   <% @user.ribbits.each do |ribbit| %>
     <div class = "ribbitWrapper">
-        <img class="avatar" src="<%=ribbit.user.avatar_url%>" />
+    <%= image_tag @user.image_url(:thumb).to_s %>
         <span class ="name"> <%= ribbit.user.name %> </span>
       @<%= ribbit.user.username%>
       <span class ="time"><%= time_ago_in_words(ribbit.created_at)%></span>
       <p><%= ribbit.content%></p>
+      <%= ribbit.id %>
+      <%= link_to "Delete", ribbit, :action => :delete %>
     </div>
   <%end%>
 </div>
