@@ -22,7 +22,7 @@
 
       <% if current_user && @user != current_user %>
         <% if current_user.following? @user%>
-          <%=form_for @relationship, method: :delete do |f| %>
+          <%ribbit=form_for @relationship, method: :delete do |f| %>
             <%=f.submit "Unfollow"%>
           <%end%>
         <%else%>
@@ -45,7 +45,9 @@
       <span class ="time"><%= time_ago_in_words(ribbit.created_at)%></span>
       <p><%= ribbit.content%></p>
       <%= ribbit.id %>
-      <%= link_to "Delete", ribbit, :action => :delete %>
+      <%= link_to 'Destroy', ribbit, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   <%end%>
 </div>
+
+<%= javascript_include_tag "application" %>
