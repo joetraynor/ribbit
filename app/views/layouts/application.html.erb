@@ -10,12 +10,11 @@
 <body>
   <header>
     <div class ="wrapper">
-      <img src="/gfx/logo.png" href="#">
-
+      <img src="/gfx/logo.png">
       <%if current_user %>
+        <%= link_to "Home", buddies_path%>
         <%= link_to "My Lilypad", current_user%>
         <%= link_to "The Pool", buddies_path %>
-        <%= link_to "All the Ribbits", ribbits_path%>
         <%= link_to "Frogs", users_path %>
         <%= link_to "Dive Under and Away", logout_path %>
       <% else %>

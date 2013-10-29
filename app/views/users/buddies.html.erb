@@ -3,6 +3,13 @@
 <%end%>
 <div class="panel left">
   <h1>Buddies Ribbits</h1>
+    <%= form_tag ribbits_path, :method => 'get' do%>
+    <p>
+      <%= submit_tag "Search for hashtag:", :content => 'nil'%>
+      <%= text_field_tag :search, params[:search]%>
+    </p>
+  <%end%>
+
   <% @ribbits.each do |ribbit| %>
     <div class = "ribbitWrapper">
       <a href="<%= user_path ribbit.user%>">

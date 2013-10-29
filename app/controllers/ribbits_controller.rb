@@ -7,8 +7,8 @@ class RibbitsController < ApplicationController
   end
 
   def destroy
-    @ribbit = Ribbit.find(params[:id])
-    @ribbit.destroy
+    @post = Ribbit.find(params[:id])
+    @post.destroy
     flash[:notice] = "Let's hope that was supposed to be deleted"
     redirect_to root_url
   end
