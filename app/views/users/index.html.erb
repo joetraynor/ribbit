@@ -15,7 +15,7 @@
   <%@users.each do |user| %>
     <div class="ribbitWrapper">
       <a href="<%=user_path user%>">
-        <img class ="avatar" src="<%= user.avatar_url%>"/>
+      <%= image_tag user.image_url(:thumb).to_s %>
         <span class="name"><%= user.name%></span>
       </a>
       @<%= user.username %>

@@ -13,12 +13,14 @@
   <% @ribbits.each do |ribbit| %>
     <div class = "ribbitWrapper">
       <a href="<%= user_path ribbit.user%>">
-        <%= image_tag ribbit.user.image_url(:thumb).to_s %>
+      <%= image_tag ribbit.user.image_url(:thumb).to_s %>
         <span class ="name"> <%= ribbit.user.name %> </span>
       </a>
       @<%= ribbit.user.username%>
       <span class ="time"><%= time_ago_in_words(ribbit.created_at)%></span>
       <p><%= ribbit.content%></p>
+      <a href="https://twitter.com/<%=ribbit.user.username%>" class="twitter-follow-button" data-show-count="false">Follow @<%=ribbit.user.username%></a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     </div>
   <%end%>
 </div>
