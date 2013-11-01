@@ -2,7 +2,7 @@
   <h1>Interactions</h1>
     
 
-    <%= form_tag interactions_search_path, :method => 'get' do%>
+    <%= form_tag interactions_path, :method => 'get' do%>
     <p>
       <%= submit_tag "Search for a friend:", :name => 'nil'%>
       <%= text_field_tag :search, params[:search]%>
