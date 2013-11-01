@@ -1,8 +1,8 @@
 class InteractionsController < ApplicationController
 
   def index
-    @ribbits = Ribbit.search_mention(params[:search]) if params[:search]
-    @ribbits = Ribbit.search_mention(current_user.username)
+    query = params[:search].nil? ? current_user.username : params[:search]
+    @ribbits = Ribbit.search_mention(query)
   end
 
 end
