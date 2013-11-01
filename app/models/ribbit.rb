@@ -8,7 +8,15 @@ class Ribbit < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find(:all, :conditions => ['content LIKE ?', "#%#{search}%"])
+      find(:all, :conditions => ['content LIKE ?',  "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+
+  def self.search_mention(user_search)
+    if user_search
+      find(:all, :conditions => ['content LIKE ?',  "%@#{user_search}%"])
     else
       find(:all)
     end

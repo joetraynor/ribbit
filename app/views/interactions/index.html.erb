@@ -1,17 +1,16 @@
-
 <div class="panel left">
   <h1>Interactions</h1>
     
 
-
-    <%= form_tag interactions_path, :method => 'get' do%>
+    <%= form_tag interactions_search_path, :method => 'get' do%>
     <p>
       <%= submit_tag "Search for a friend:", :name => 'nil'%>
       <%= text_field_tag :search, params[:search]%>
     </p>
     <%end%>
 
-  <% @user.ribbits.each do |ribbit| %>
+<% if @ribbits %>
+  <% @ribbits.each do |ribbit| %>
     <div class = "ribbitWrapper">
       <%= image_tag ribbit.user.image_url(:thumb).to_s %>
         <span class ="name"> <%= ribbit.user.name %> </span>
@@ -24,5 +23,6 @@
     </div>
   <%end%>
 
+<% end %>
 </div>
 

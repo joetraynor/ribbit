@@ -1,11 +1,12 @@
 class InteractionsController < ApplicationController
 
   def index
-    @interactions = Interaction.search(params[:search])
+
   end
 
-  def show
-
+  def search
+    @ribbits = Ribbit.search_mention(params[:search])
+    render :index
   end
 
 end
